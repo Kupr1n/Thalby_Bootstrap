@@ -46,7 +46,9 @@ header {
     position: absolute;
     left: 50%;
     margin-left: -40px;
-    top: 10px;
+    @include max-screen(990px){
+      top: 10px;
+    }
   }
 }
 

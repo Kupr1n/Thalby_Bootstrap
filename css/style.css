@@ -29,7 +29,11 @@ header .navbar-brand {
   position: absolute;
   left: 50%;
   margin-left: -40px;
-  top: 10px;
+}
+@media screen and (max-width: 990px) {
+  header .navbar-brand {
+    top: 10px;
+  }
 }
 
 .main_banner {
