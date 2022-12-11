@@ -11,7 +11,7 @@ $main_font: 'Roboto', sans-serif;
 }
 
 header {
-  
+
   .soc_header {
     list-style: none;
     align-items: flex-start;
@@ -56,6 +56,7 @@ header {
   @include max-screen(992px) {
     text-align: center;
   }
+
   h1 {
     font-family: $main_font;
     font-style: normal;
@@ -98,8 +99,14 @@ header {
   .btn {
     border-radius: 100px;
     background-color: #000000;
+
     &:hover {
-      box-shadow: inset 0 0 0 3px #DEB887;
+      box-shadow: 1px 1px #DEB887,
+      2px 2px #DEB887,
+      3px 3px #DEB887;
+      -webkit-transform: translateX(-7px);
+      transform: translateX(-7px);
+
     }
 
   }
@@ -116,8 +123,23 @@ header {
 }
 
 .best_sellers {
+  padding: 60px 0 200px;
+  @include max-screen(800px) {
+    padding: 50px 0 70px;
+  }
+
+  p {
+    margin-bottom: 10px;
+    font-family: $main_font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #000000;
+  }
+
   h2 {
-    padding-top: 60px;
     font-family: $main_font;
     font-style: normal;
     font-weight: 700;
@@ -138,38 +160,26 @@ header {
     padding: 88px 0 52px 0;
   }
 
-  p {
-    font-family: $main_font;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    text-align: center;
-    color: #000000;
-
-  }
-
   .card {
     border: none;
-    margin-bottom: 200px;
 
-    h5 {
-      margin-top: 20px;
-      margin-bottom: 17px;
+    .card-text {
       font-family: $main_font;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 17px;
       line-height: 20px;
       text-align: center;
       color: #000000;
+      padding-bottom: 10px;
     }
 
-    p {
-      margin-bottom: 10px;
+    .card-title {
+      padding-top: 19px;
+      padding-bottom: 17px;
       font-family: $main_font;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 700;
       font-size: 17px;
       line-height: 20px;
       text-align: center;
@@ -188,6 +198,7 @@ header {
     }
   }
 }
+
 
 .portfolio {
   padding-top: 76px;
@@ -230,6 +241,22 @@ header {
       width: 100%;
       display: block;
     }
+  }
+}
+
+.rotate {
+  &:hover {
+    -webkit-transform: rotateZ(10deg);
+    -ms-transform: rotateZ(10deg);
+    transform: rotateZ(10deg);
+  }
+}
+
+.rotate1 {
+  &:hover {
+    -webkit-transform: rotateZ(10deg);
+    -ms-transform: rotateZ(10deg);
+    transform: rotateZ(-10deg);
   }
 }
 
@@ -315,6 +342,13 @@ header {
 
   img {
     margin-right: 50px;
+
+    .rotate:hover {
+      -webkit-transform: rotateZ(20deg);
+      -ms-transform: rotateZ(20deg);
+      transform: rotateZ(20deg);
+    }
+
     @include max-screen(992px) {
       width: 100%;
       display: block;
@@ -333,6 +367,11 @@ header {
     color: #000000;
     padding-top: 190px;
     padding-bottom: 69px;
+
+    @include max-screen(996px){
+      padding-top: 80px;
+      padding-bottom: 30px;
+    }
   }
 
   .col-md-4 {
@@ -354,6 +393,12 @@ header {
       height: 70px;
       border-radius: 50%;
       margin-bottom: 24px;
+    }
+
+    &:hover {
+      -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+      transform: scale(0.7);
     }
 
     &:nth-child(2) {
@@ -388,6 +433,7 @@ header {
   }
 }
 
+
 .faces {
   h3 {
     margin-bottom: 290px;
@@ -399,7 +445,11 @@ header {
     font-size: 36px;
     line-height: 42px;
     color: #000000;
-    padding-top: 35px
+    padding-top: 35px;
+    @include max-screen(960px){
+      padding-top: 20px;
+
+    }
   }
 
   p {
@@ -413,10 +463,6 @@ header {
     color: #000000;
     margin-bottom: 44px;
     margin-top: 35px;
-  }
-
-  .card-body {
-    padding: 0;
   }
 
   h5 {
@@ -455,6 +501,9 @@ header {
     article {
       position: relative;
       top: -188px;
+      @include max-screen(765px){
+        top: -100px;
+      }
     }
   }
 }
@@ -514,6 +563,14 @@ header {
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 88px;
+
+    &:hover {
+      box-shadow: 1px 1px #D399FF,
+      2px 2px #D399FF,
+      3px 3px #D399FF;
+      -webkit-transform: translateX(-7px);
+      transform: translateX(-7px);
+    }
   }
 }
 
@@ -521,6 +578,9 @@ footer {
   background-color: #020202;
   padding-bottom: 16px;
   padding-top: 51px;
+  @include max-screen(767px){
+    text-align: center;
+  }
 
   a {
     font-family: $main_font;
@@ -534,27 +594,61 @@ footer {
   .logo_soc {
     display: flex;
     margin-top: 44px;
+    @include max-screen(767px){
+      justify-content: center;
+      margin-left: 20px;
+    }
+
 
     a {
       margin-right: 21px;
+      &:hover {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+      }
     }
   }
 }
 
 .about {
   padding-bottom: 36px;
+  font-family:$main_font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 23px;
+  color: #FFFFFF;
 }
+
 .about1 {
   margin-bottom: 12px;
+  font-family:$main_font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #FFFFFF;
 }
 
 .title_about {
   list-style: none;
+  text-align: start;
+  @include max-screen(767px){
+    text-align: center;
+    padding-top: 20px;
+  }
 }
 
 .title_contact {
   list-style: none;
+  text-align: start;
+  @include max-screen(767px){
+    text-align: center;
+    padding-top: 20px;
+  }
 }
+
 p {
   font-family: $main_font;
   font-style: normal;
@@ -565,3 +659,6 @@ p {
   color: #FFFFFF;
   padding-top: 20px;
 }
+
+
+
