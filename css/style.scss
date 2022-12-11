@@ -11,10 +11,7 @@ $main_font: 'Roboto', sans-serif;
 }
 
 header {
-  .navbar {
-    padding: 0;
-  }
-
+  
   .soc_header {
     list-style: none;
     align-items: flex-start;
@@ -43,37 +40,22 @@ header {
     font-size: 16px;
     line-height: 26px;
     color: #1C1B1B;
-
-    &:first-of-type {
-      padding-right: 28px;
-    }
-
-    &:nth-child(2) {
-      padding-right: 28px;
-      margin-left: 0;
-    }
-
-    &:nth-child(3) {
-      padding-right: 28px;
-    }
-
-    &:last-of-type {
-      padding-right: 97px;
-    }
   }
 
   .navbar-brand {
     position: absolute;
     left: 50%;
-    margin-left: -30px;
-    top: 6px;
+    margin-left: -40px;
+    top: 10px;
   }
 }
 
 .main_banner {
   background-color: #F0EFEB;
   padding: 90px 0;
-
+  @include max-screen(992px) {
+    text-align: center;
+  }
   h1 {
     font-family: $main_font;
     font-style: normal;
@@ -82,6 +64,9 @@ header {
     line-height: 70px;
     color: #000000;
     margin-bottom: 42px;
+    @include max-screen(992px) {
+      text-align: center;
+    }
   }
 
   p {
@@ -92,6 +77,9 @@ header {
     line-height: 28px;
     color: #000000;
     margin-bottom: 26px;
+    @include max-screen(992px) {
+      text-align: center;
+    }
   }
 
   a {
@@ -102,11 +90,18 @@ header {
     line-height: 20px;
     color: #FFFFFF;
     padding: 7px 23px 9px;
+    @include max-screen(992px) {
+      text-align: center;
+    }
   }
 
   .btn {
     border-radius: 100px;
     background-color: #000000;
+    &:hover {
+      box-shadow: inset 0 0 0 3px #DEB887;
+    }
+
   }
 }
 
